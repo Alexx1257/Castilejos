@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { FiX, FiShoppingBag, FiTrash2 } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import { useCartContext } from '../../context/CartContext'
@@ -8,9 +9,15 @@ export default function CartDrawer({ isOpen, onClose }) {
   const { items, cartTotal, clearCart } = useCartContext()
   const hasItems = items.length > 0
 
+  const [isProcessing, setIsProcessing] = useState(false)
+
   const handleSendOrder = () => {
-    const url = buildWhatsAppOrderUrl(items, cartTotal)
-    window.open(url, '_blank', 'noopener,noreferrer')
+    setIsProcessing(true)
+    setTimeout(() => {
+      const url = buildWhatsAppOrderUrl(items, cartTotal)
+      window.open(url, '_blank', 'noopener,noreferrer')
+      setIsProcessing(false)
+    }, 1200)
   }
 
   return (
@@ -92,10 +99,21 @@ export default function CartDrawer({ isOpen, onClose }) {
             <div className="space-y-3">
               <button
                 onClick={handleSendOrder}
-                className="w-full bg-nature-700 text-white font-bold py-5 text-[11px] uppercase tracking-[0.2em] hover:bg-nature-600 transition-all flex items-center justify-center gap-3 shadow-xl"
+                disabled={isProcessing}
+                className={`w-full text-white font-bold py-5 text-[11px] uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-3 shadow-xl
+                  ${isProcessing ? 'bg-nature-800 cursor-wait' : 'bg-nature-700 hover:bg-nature-600'}`}
               >
-                <FaWhatsapp size={18} />
-                Solicitar Cotización Directa
+                {isProcessing ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Procesando Pedido...
+                  </>
+                ) : (
+                  <>
+                    <FaWhatsapp size={18} />
+                    Solicitar Cotización Directa
+                  </>
+                )}
               </button>
               <p className="text-[9px] text-center text-sand-400 uppercase tracking-widest leading-relaxed">
                 * El costo final puede variar según dimensiones y flete.<br/>Un experto le atenderá de inmediato.

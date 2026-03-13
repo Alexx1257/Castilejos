@@ -1,8 +1,6 @@
-import { useReducer, useMemo, useCallback } from 'react'
+import { useReducer, useMemo, useCallback, useEffect } from 'react'
 
 // ─── Lógica pura del carrito (reducción sin side-effects) ────────
-// El estado nunca se muta directamente; cada acción retorna un nuevo estado.
-
 const ACTIONS = {
   ADD_ITEM:        'ADD_ITEM',
   REMOVE_ITEM:     'REMOVE_ITEM',
@@ -15,7 +13,6 @@ function cartReducer(state, action) {
     case ACTIONS.ADD_ITEM: {
       const existingIndex = state.findIndex((item) => item.id === action.product.id)
       if (existingIndex >= 0) {
-        // Incrementa cantidad si ya existe
         return state.map((item, idx) =>
           idx === existingIndex ? { ...item, quantity: item.quantity + 1 } : item
         )
@@ -45,7 +42,15 @@ function cartReducer(state, action) {
 
 // ─── Hook público del carrito ────────────────────────────────────
 export function useCart() {
-  const [items, dispatch] = useReducer(cartReducer, [])
+  // Inicialización perezosa desde localStorage
+  const initialState = JSON.parse(localStorage.getItem('castillejos-cart') || '[]')
+  
+  const [items, dispatch] = useReducer(cartReducer, initialState)
+
+  // Persistir cambios
+  useEffect(() => {
+    localStorage.setItem('castillejos-cart', JSON.stringify(items))
+  }, [items])
 
   const addItem = useCallback((product) => {
     dispatch({ type: ACTIONS.ADD_ITEM, product })

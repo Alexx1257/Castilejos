@@ -52,25 +52,19 @@ export default function Hero() {
             Suministramos maderas nobles y materiales de construcción para proyectos que buscan perdurar en el tiempo con elegancia y resistencia.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-8 animate-fade-in animate-delay-500">
-            <button 
-              onClick={scrollToCatalog}
-              className="wood-button flex items-center gap-4 group"
+          <div className="flex flex-col sm:flex-row gap-6 pt-10 animate-fade-in animate-delay-500">
+            <a 
+              href="#catalog"
+              className="group relative px-12 py-6 bg-wood-400 text-wood-950 font-black text-[11px] uppercase tracking-[0.3em] overflow-hidden transition-all hover:bg-wood-300 hover:shadow-[0_20px_40px_rgba(180,120,60,0.3)] shadow-xl active:scale-95 text-center"
             >
-              Explorar Selección
-              <FiArrowRight className="group-hover:translate-x-2 transition-transform" />
-            </button>
-            
-            <a
-              href={buildWhatsAppContactUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-4 text-sm font-bold uppercase tracking-[0.2em] text-white/80 hover:text-white transition-all"
+              <span className="relative z-10">Explorar Catálogo</span>
+              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
+            </a>
+            <a 
+              href="#contact"
+              className="px-12 py-6 border border-white/20 text-white/80 font-bold text-[11px] uppercase tracking-[0.2em] hover:bg-white hover:text-wood-950 transition-all text-center"
             >
-              <span className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-wood-950 transition-all duration-500">
-                <FaWhatsapp size={22} />
-              </span>
-              Presupuesto Express
+              Asesoría Técnica
             </a>
           </div>
 

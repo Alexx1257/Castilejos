@@ -58,26 +58,24 @@ export default function Catalog() {
           </div>
         </div>
 
-        {/* Tabs de categorías Minimalistas */}
-        <div className="flex flex-wrap items-center gap-x-12 gap-y-6 mb-20 border-b border-sand-50" role="tablist">
+        {/* Tabs de categorías Premium */}
+        <div className="flex flex-wrap justify-center gap-4 mb-20">
           {CATEGORY_TABS.map(({ key, label, Icon }) => {
             const isActive = activeCategory === key
             return (
               <button
                 key={key}
-                role="tab"
-                aria-selected={isActive}
                 onClick={() => setActiveCategory(key)}
-                className={`flex items-center gap-3 pb-6 text-[10px] font-bold tracking-[0.3em] uppercase transition-all relative
-                  ${isActive
-                    ? 'text-wood-900'
-                    : 'text-sand-400 hover:text-wood-600'
+                className={`px-10 py-5 text-[10px] sm:text-[11px] font-black uppercase tracking-[0.25em] transition-all relative overflow-hidden flex items-center gap-4
+                  ${isActive 
+                    ? 'bg-wood-950 text-white shadow-2xl translate-y-[-4px]' 
+                    : 'bg-white text-wood-400 border border-sand-100 hover:border-wood-200 hover:text-wood-600 hover:bg-sand-50 active:scale-95'
                   }`}
               >
-                <Icon size={14} className={isActive ? 'text-wood-600' : 'text-sand-300'} />
+                <Icon size={16} />
                 {label}
                 {isActive && (
-                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-wood-900 animate-fade-in" />
+                    <div className="absolute bottom-0 left-0 w-full h-[4px] bg-wood-400 animate-slide-right" />
                 )}
               </button>
             )
@@ -123,13 +121,12 @@ export default function Catalog() {
                 Todas nuestras maderas cuentan con certificación de origen legal.
               </p>
           </div>
-          <a href="#contacto" className="wood-button group">
+          <a href="#contacto" className="wood-button group text-center block w-full sm:w-auto">
             Maderas Especiales
-            <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform inline" />
           </a>
         </div>
       </div>
     </section>
   )
 }
-

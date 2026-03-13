@@ -10,6 +10,7 @@ import Hero       from './sections/Hero'
 import About      from './sections/About'
 import PromoBanner from './sections/PromoBanner'
 import Catalog    from './sections/Catalog'
+import Testimonials from './sections/Testimonials'
 import Features   from './sections/Features'
 import Location   from './sections/Location'
 import Contact    from './sections/Contact'
@@ -39,6 +40,7 @@ export default function App() {
         <About />
         <PromoBanner />
         <Catalog />
+        <Testimonials />
         <Features />
         <Location />
         <Contact />

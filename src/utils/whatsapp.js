@@ -8,8 +8,22 @@ import { WHATSAPP_NUMBER, BUSINESS_INFO } from '../config/constants'
  * @param {number} total
  * @returns {string} URL de wa.me con el mensaje codificado
  */
+/**
+ * @returns {string} URL de WhatsApp sin pedido (contacto directo)
+ */
+export function buildWhatsAppContactUrl() {
+  const formattedPhone = WHATSAPP_NUMBER.startsWith('52') ? WHATSAPP_NUMBER : `52${WHATSAPP_NUMBER}`
+  const message = `¡Hola! Me gustaría obtener información sobre sus productos y materiales. ¿Podrían ayudarme?`
+  return `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`
+}
+
+function getSafePhone() {
+    return WHATSAPP_NUMBER.startsWith('521') ? WHATSAPP_NUMBER : (WHATSAPP_NUMBER.startsWith('52') ? WHATSAPP_NUMBER : `52${WHATSAPP_NUMBER}`)
+}
+
 export function buildWhatsAppOrderUrl(cartItems, total) {
-  if (!cartItems.length) return `https://wa.me/${WHATSAPP_NUMBER}`
+  const phone = getSafePhone()
+  if (!cartItems.length) return `https://wa.me/${phone}`
 
   const itemLines = cartItems
     .map((item) => `  • ${item.quantity}x ${item.name} — $${(item.price * item.quantity).toFixed(2)}`)
@@ -25,13 +39,5 @@ export function buildWhatsAppOrderUrl(cartItems, total) {
     'Por favor, confirmen disponibilidad y tiempo de entrega. ¡Gracias! 🙏',
   ].join('\n')
 
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
-}
-
-/**
- * @returns {string} URL de WhatsApp sin pedido (contacto directo)
- */
-export function buildWhatsAppContactUrl() {
-  const message = `¡Hola! Me gustaría obtener información sobre sus productos y materiales. ¿Podrían ayudarme?`
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 }
