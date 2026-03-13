@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ────────────────────────────────────────────────
+   Base styles
+   ──────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply font-sans antialiased text-sand-900 bg-sand-50/50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight text-wood-950;
+  }
+
+  p {
+    @apply leading-relaxed text-sand-700 font-light;
+  }
+
+  ::selection {
+    @apply bg-wood-200 text-wood-900;
+  }
+
+  /* Focus rings para accesibilidad con estilo */
+  :focus-visible {
+    @apply outline-none ring-2 ring-wood-500 ring-offset-2;
+  }
+}
+
+/* ────────────────────────────────────────────────
+   Componentes & Utilidades de Diseño
+   ──────────────────────────────────────────────── */
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-36;
+  }
+
+  .premium-card {
+    @apply bg-white border border-sand-200 shadow-[0_4px_24px_rgba(31,20,10,0.04)]
+           transition-all duration-500 hover:shadow-[0_12px_40px_rgba(31,20,10,0.08)] 
+           hover:border-wood-200;
+  }
+
+  .wood-button {
+    @apply relative inline-flex items-center justify-center px-10 py-4 
+           bg-wood-800 text-white font-medium rounded-sm tracking-widest uppercase text-xs
+           transition-all duration-500 ease-out overflow-hidden
+           hover:bg-wood-700 hover:shadow-xl hover:-translate-y-1
+           active:translate-y-0 active:shadow-md;
+  }
+
+  .wood-button-outline {
+    @apply relative inline-flex items-center justify-center px-10 py-4 
+           border border-wood-800 text-wood-800 font-medium rounded-sm tracking-widest uppercase text-xs
+           transition-all duration-500 ease-out
+           hover:bg-wood-50 hover:border-wood-700 hover:text-wood-700;
+  }
+
+  .nav-link {
+    @apply relative text-xs font-semibold uppercase tracking-[0.1em] text-sand-600 
+           hover:text-wood-800 transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-[1px] bg-wood-700 transition-all duration-500;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .premium-label {
+    @apply text-[10px] font-bold uppercase tracking-[0.3em] text-wood-500 mb-4 block;
+  }
+
+  /* Estilos para el catálogo premium */
+  .product-card {
+    @apply premium-card rounded-none overflow-hidden;
+  }
+
+  .product-image-container {
+    @apply relative aspect-[4/5] overflow-hidden bg-sand-100;
+  }
+
+  .product-image {
+    @apply w-full h-full object-cover transition-transform duration-1000;
+  }
+}
+
+/* ────────────────────────────────────────────────
+   Utilidades Especializadas
+   ──────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-wood-grain-subtle {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2354381d' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-2v4h2v4h2v-4h2v-4h-2zm0 8.07V46H28V30h8c0 4.42 3.58 8 8 8V26H28v-4h24v16c0 4.42-3.58 8-8 8h-6v-1.93zM50 34c2.21 0 4 1.79 4 4h-4v-4zm0-12V8h-2V0h-2v8h-2V0h-2v8h-2V0h-2v8h-2V0h-2v8h-2V0h-2v8h-2v12h4v8h4v-8h4v-8h4v-8h4v-8h4v-8h-4zM22 28v4h-2v-4h-2v-4h2v-4h2v4h2v4h-2zM0 26h28v12H0V26zm20 8c2.21 0 4 1.79 4 4h-4v-4zM0 38h20c0 4.42 3.58 8 8 8h6v2H0V38zm0-12h2v-4H0v4zm0-8h2v-4H0v4zm0-8h2V0H0v4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Scrollbar personalizado estilo madera */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-sand-50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-wood-200 hover:bg-wood-300 transition-colors;
+  }
+}
+
