@@ -1,7 +1,7 @@
 import { FaWhatsapp } from 'react-icons/fa'
 import { buildWhatsAppContactUrl } from '../../utils/whatsapp'
 
-export default function WhatsAppFAB() {
+export default function WhatsAppFAB({ isCartOpen }) {
   const handleClick = () => {
     window.open(buildWhatsAppContactUrl(), '_blank', 'noopener,noreferrer')
   }
@@ -10,7 +10,8 @@ export default function WhatsAppFAB() {
     <button
       onClick={handleClick}
       aria-label="Contactar por WhatsApp"
-      className="fixed bottom-10 right-10 z-[70] group flex items-center justify-center p-2"
+      className={`fixed bottom-10 right-10 z-[80] group flex items-center justify-center p-2 transition-all duration-500
+        ${isCartOpen ? 'opacity-0 scale-50 pointer-events-none translate-y-10' : 'opacity-100 scale-100'}`}
     >
       {/* Halo de animación elegante */}
       <span className="absolute inset-0 rounded-full bg-nature-500/30 animate-ping" />

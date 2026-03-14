@@ -53,7 +53,7 @@ export default function App() {
       <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
 
       {/* Botón flotante de WhatsApp */}
-      <WhatsAppFAB />
+      <WhatsAppFAB isCartOpen={cartOpen} />
     </>
   )
 }

@@ -25,7 +25,7 @@ export default function CartDrawer({ isOpen, onClose }) {
       {/* Overlay Minimalista */}
       <div
         onClick={onClose}
-        className={`fixed inset-0 z-50 bg-wood-950/60 backdrop-blur-md transition-opacity duration-700
+        className={`fixed inset-0 z-[60] bg-wood-950/60 backdrop-blur-md transition-opacity duration-700
           ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         aria-hidden="true"
       />
@@ -35,7 +35,7 @@ export default function CartDrawer({ isOpen, onClose }) {
         role="dialog"
         aria-label="Carrito de compras"
         aria-modal="true"
-        className={`fixed inset-y-0 right-0 z-[60] w-full max-w-md bg-white shadow-2xl
+        className={`fixed inset-y-0 right-0 z-[70] w-full max-w-md bg-white shadow-2xl
           flex flex-col transition-transform duration-500 ease-in-out
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
@@ -96,22 +96,27 @@ export default function CartDrawer({ isOpen, onClose }) {
               </button>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               <button
                 onClick={handleSendOrder}
                 disabled={isProcessing}
-                className={`w-full text-white font-bold py-5 text-[11px] uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-3 shadow-xl
-                  ${isProcessing ? 'bg-nature-800 cursor-wait' : 'bg-nature-700 hover:bg-nature-600'}`}
+                className={`w-full text-white font-black py-6 text-[11px] uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-4 shadow-2xl relative overflow-hidden group/btn
+                  ${isProcessing 
+                    ? 'bg-nature-800 cursor-wait' 
+                    : 'bg-[#25D366] hover:bg-[#20ba5a] hover:-translate-y-1 active:scale-95'}`}
               >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                
                 {isProcessing ? (
                   <>
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Procesando Pedido...
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <span>Procesando Pedido...</span>
                   </>
                 ) : (
                   <>
-                    <FaWhatsapp size={18} />
-                    Solicitar Cotización Directa
+                    <FaWhatsapp size={22} className="group-hover/btn:rotate-12 transition-transform" />
+                    <span>Solicitar Cotización Directa</span>
                   </>
                 )}
               </button>

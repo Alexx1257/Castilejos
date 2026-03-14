@@ -60,12 +60,16 @@ export default function About() {
               <div className="absolute inset-0 bg-wood-900/10 group-hover:bg-transparent transition-all duration-700" />
             </div>
             
-            {/* Decortative Badge */}
-            <div className="absolute -bottom-8 -left-8 w-44 h-44 bg-wood-900 border border-wood-800 flex flex-col items-center justify-center p-6 shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-700">
+            {/* Decortative Badge with Legal Info */}
+            <div className="absolute -bottom-8 -left-8 w-56 h-56 bg-wood-900 border border-wood-800 flex flex-col items-center justify-center p-6 shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-700">
                 <GiWoodBeam className="text-4xl text-wood-200 mb-4" />
-                <span className="text-[9px] text-wood-400 uppercase tracking-[0.4em] font-bold text-center leading-relaxed">
-                    Sello de <br /> Autenticidad
+                <span className="text-[9px] text-wood-400 uppercase tracking-[0.4em] font-bold text-center leading-relaxed mb-4">
+                    Madera de <br /> Origen Legal
                 </span>
+                <div className="pt-4 border-t border-wood-800 w-full text-center space-y-1">
+                  <p className="text-[7px] text-wood-500 uppercase tracking-widest font-medium">CIF: R-07-079DEI-001/12</p>
+                  <p className="text-[7px] text-wood-500 uppercase tracking-widest font-medium">RFC: CAED739908NB1</p>
+                </div>
             </div>
           </div>
 

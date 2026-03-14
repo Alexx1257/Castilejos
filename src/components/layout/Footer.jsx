@@ -1,6 +1,7 @@
 import { FaWhatsapp, FaFacebook, FaInstagram } from 'react-icons/fa'
 import { FiMapPin, FiPhone } from 'react-icons/fi'
 import { GiWoodBeam } from 'react-icons/gi'
+import logoImage from '../../assets/logo_castillejos.png'
 import { BUSINESS_INFO } from '../../config/constants'
 import { buildWhatsAppContactUrl } from '../../utils/whatsapp'
 
@@ -17,13 +18,23 @@ export default function Footer() {
           
           {/* Brand Identity */}
           <div className="lg:col-span-12 xl:col-span-5 space-y-10">
-            <div className="flex items-center gap-5">
-              <div className="w-14 h-14 bg-white flex items-center justify-center rotate-3">
-                <GiWoodBeam className="text-wood-950" size={28} />
+            <div className="flex items-center gap-6">
+              <div className="relative group/logo">
+                <div className="absolute inset-0 bg-white/5 blur-lg group-hover/logo:bg-white/10 transition-all rounded-full" />
+                <img 
+                  src={logoImage} 
+                  alt="Logo Castillejos" 
+                  className="relative w-24 h-24 object-contain"
+                />
               </div>
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <span className="block font-display font-bold text-3xl text-white tracking-tight leading-none uppercase">CASTILLEJOS</span>
-                <span className="block text-[10px] uppercase tracking-[0.5em] text-wood-400 font-bold">Maderería de Autor</span>
+                <span className="block text-[9px] uppercase tracking-[0.4em] text-wood-400 font-bold">Maderería & Ferretería Premium</span>
+                {/* Legal Info Discreet */}
+                <div className="pt-2 border-t border-white/5 space-y-1">
+                  <p className="text-[8px] uppercase tracking-widest text-white/30">CIF: R-07-079DEI-001/12</p>
+                  <p className="text-[8px] uppercase tracking-widest text-white/30">RFC: CAED739908NB1</p>
+                </div>
               </div>
             </div>
             

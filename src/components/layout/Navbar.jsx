@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FiShoppingCart, FiMenu, FiX } from 'react-icons/fi'
-import { GiWoodBeam } from 'react-icons/gi'
+import logoImage from '../../assets/logo_castillejos.png'
 import { useCartContext } from '../../context/CartContext'
 
 const NAV_LINKS = [
@@ -24,27 +24,29 @@ export default function Navbar({ onOpenCart }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-700
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700
         ${scrolled 
           ? 'bg-wood-950 border-b border-wood-800/50 py-3 shadow-2xl' 
           : 'bg-wood-950/40 backdrop-blur-sm py-5'}`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between" aria-label="Navegación principal">
         
-        {/* Logo Stylized */}
-        <a href="#hero" className="flex items-center gap-4 group" aria-label="Ir al inicio">
+        {/* Logo Oficial */}
+        <a href="#hero" className="flex items-center gap-4 group transition-all hover:scale-105" aria-label="Ir al inicio">
           <div className="relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-wood-200/20 blur-xl group-hover:bg-wood-200/40 transition-all rounded-full" />
-            <div className="relative w-11 h-11 bg-wood-100 flex items-center justify-center rounded-sm rotate-3 group-hover:rotate-0 transition-all duration-500 shadow-lg">
-              <GiWoodBeam size={24} className="text-wood-900 group-hover:scale-110 transition-transform" />
-            </div>
+            <div className="absolute inset-0 bg-wood-200/10 blur-xl group-hover:bg-wood-200/20 transition-all rounded-full" />
+            <img 
+              src={logoImage} 
+              alt="Logo Castillejos" 
+              className="relative w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-2xl"
+            />
           </div>
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-xl md:text-2xl text-white tracking-tight leading-none">
+          <div className="hidden sm:flex flex-col">
+            <span className="font-display font-bold text-lg md:text-xl text-white tracking-tight leading-none">
               CASTILLEJOS
             </span>
-            <span className="text-[10px] uppercase tracking-[0.4em] font-medium text-wood-300">
-              Maderería Premium
+            <span className="text-[9px] uppercase tracking-[0.3em] font-medium text-wood-300">
+              Maderería & Ferretería
             </span>
           </div>
         </a>
