@@ -3,9 +3,9 @@ import { FiUsers, FiAward, FiPackage } from 'react-icons/fi'
 import aboutImage from '../assets/stacks_of_planks.png'
 
 const STATS = [
-  { Icon: FiAward,   value: '22', label: 'Especies' },
+  { Icon: FiAward, value: '22', label: 'Especies' },
   { Icon: FiPackage, value: '500+', label: 'Productos' },
-  { Icon: FiUsers,   value: '1k+', label: 'Clientes' },
+  { Icon: FiUsers, value: '1k+', label: 'Clientes' },
 ]
 
 export default function About() {
@@ -15,7 +15,7 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          
+
           {/* Text Column */}
           <div className="order-2 lg:order-1 space-y-10">
             <div className="space-y-4">
@@ -59,17 +59,22 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-wood-900/10 group-hover:bg-transparent transition-all duration-700" />
             </div>
-            
+
             {/* Decortative Badge with Legal Info */}
-            <div className="absolute -bottom-8 -left-8 w-56 h-56 bg-wood-900 border border-wood-800 flex flex-col items-center justify-center p-6 shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-700">
-                <GiWoodBeam className="text-4xl text-wood-200 mb-4" />
-                <span className="text-[9px] text-wood-400 uppercase tracking-[0.4em] font-bold text-center leading-relaxed mb-4">
-                    Madera de <br /> Origen Legal
-                </span>
-                <div className="pt-4 border-t border-wood-800 w-full text-center space-y-1">
-                  <p className="text-[7px] text-wood-500 uppercase tracking-widest font-medium">CIF: R-07-079DEI-001/12</p>
-                  <p className="text-[7px] text-wood-500 uppercase tracking-widest font-medium">RFC: CAED739908NB1</p>
-                </div>
+            <div className="absolute -bottom-8 -left-8 w-56 h-56 bg-wood-900 border border-wood-800 flex flex-col items-center justify-center p-6 shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-700 [backface-visibility:hidden] [will-change:transform]">
+              <GiWoodBeam className="text-4xl text-wood-200 mb-4 group-hover:text-wood-100 transition-colors" />
+              <span className="text-[12px] text-wood-400 uppercase tracking-[0.4em] font-bold text-center leading-relaxed mb-4 antialiased group-hover:text-wood-300 transition-colors">
+                Madera de <br /> Origen Legal
+              </span>
+              <div className="pt-4 border-t border-wood-800 w-full text-center space-y-2">
+                <p className="text-[8px] text-wood-500 uppercase tracking-wider font-bold leading-tight px-2 antialiased">
+                  Código de Identidad Forestal: <br />
+                  <span className="text-wood-400 group-hover:text-wood-300 transition-colors">R-07-079DEI-001/12</span>
+                </p>
+                <p className="text-[8px] text-wood-500 uppercase tracking-wider font-bold antialiased">
+                  RFC: <span className="text-wood-400 group-hover:text-wood-300 transition-colors">CAED 739908NB1</span>
+                </p>
+              </div>
             </div>
           </div>
 

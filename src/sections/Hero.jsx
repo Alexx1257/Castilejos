@@ -2,7 +2,7 @@ import { FiArrowRight } from 'react-icons/fi'
 import { buildWhatsAppContactUrl } from '../utils/whatsapp'
 
 import heroVideo from '../assets/Lumberyard_Workshop_Background_Video.mp4'
-import logoImage from '../assets/logo_castillejos.png'
+
 
 
 export default function Hero() {
@@ -41,25 +41,7 @@ export default function Hero() {
         <div className="max-w-4xl space-y-10">
           <div className="space-y-6">
             {/* Identidad de Marca */}
-            <div className="flex items-center gap-6 mb-8 group/hero-logo animate-fade-in">
-              <div className="relative">
-                <div className="absolute inset-0 bg-wood-200/10 blur-xl group-hover/hero-logo:bg-wood-200/20 transition-all rounded-full" />
-                <img
-                  src={logoImage}
-                  alt="Logo Castillejos"
-                  className="relative w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-                />
-              </div>
-              <div className="h-12 w-[1px] bg-white/10 hidden sm:block" />
-              <div className="flex flex-col">
-                <span className="premium-label !mb-0 text-wood-200 inline-block">
-                  Tradición en Carpintería & Construcción
-                </span>
-                <span className="text-[8px] uppercase tracking-[0.5em] text-white/30 font-bold mt-1">
-                  Desde Chiapas para México
-                </span>
-              </div>
-            </div>
+
             <h1 className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-white leading-[0.95] tracking-tighter">
               Maderería y <br />
               <span className="text-wood-200 italic font-light">Ferretería Castillejos</span>

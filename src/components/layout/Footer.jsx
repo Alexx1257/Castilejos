@@ -29,11 +29,11 @@ export default function Footer() {
               </div>
               <div className="space-y-2">
                 <span className="block font-display font-bold text-3xl text-white tracking-tight leading-none uppercase">CASTILLEJOS</span>
-                <span className="block text-[9px] uppercase tracking-[0.4em] text-wood-400 font-bold">Maderería & Ferretería Premium</span>
+                <span className="block text-[10px] uppercase tracking-[0.4em] text-wood-400 font-bold">Maderería & Ferretería Premium</span>
                 {/* Legal Info Discreet */}
                 <div className="pt-2 border-t border-white/5 space-y-1">
-                  <p className="text-[8px] uppercase tracking-widest text-white/30">CIF: R-07-079DEI-001/12</p>
-                  <p className="text-[8px] uppercase tracking-widest text-white/30">RFC: CAED739908NB1</p>
+                  <p className="text-[10px] uppercase tracking-widest text-white/30">CIF: R-07-079DEI-001/12</p>
+                  <p className="text-[10px] uppercase tracking-widest text-white/30">RFC: CAED739908NB1</p>
                 </div>
               </div>
             </div>

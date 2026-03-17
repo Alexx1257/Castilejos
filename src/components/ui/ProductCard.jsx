@@ -58,15 +58,7 @@ export default function ProductCard({ product }) {
                 <FiMaximize2 className="text-wood-950" size={20} />
              </div>
           </div>
-          {/* Certificación Maderas (Opcional) */}
-          {product.category === 'Maderas' && (
-            <div className="absolute top-4 left-4 z-10 animate-fade-in group-hover:scale-110 transition-transform duration-700">
-              <span className="bg-nature-600/90 backdrop-blur-md px-3 py-1 text-[7px] font-black uppercase tracking-[0.3em] text-white flex items-center gap-2 shadow-2xl skew-x-[-10deg]">
-                <div className="w-1 h-1 bg-white rounded-full animate-pulse" />
-                Certificado Legal
-              </span>
-            </div>
-          )}
+
 
           {/* Badge de stock sutil */}
           {isOutOfStock && (
