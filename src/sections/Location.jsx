@@ -84,8 +84,8 @@ export default function Location() {
                       <h3 className="text-[11px] uppercase tracking-[0.4em] font-black text-wood-950">Horarios</h3>
                    </div>
                    {isOpen ? (
-                     <span className="px-3 py-1 bg-white text-nature-700 text-[9px] font-black uppercase tracking-[0.25em] flex items-center gap-2 border border-nature-100 shadow-sm animate-fade-in">
-                        <div className="w-1.5 h-1.5 bg-nature-500 rounded-full animate-pulse" />
+                     <span className="px-3 py-1 bg-white text-wood-500 text-[9px] font-black uppercase tracking-[0.25em] flex items-center gap-2 border border-wood-100 shadow-sm animate-fade-in">
+                        <div className="w-1.5 h-1.5 bg-wood-400 rounded-full animate-pulse" />
                         Abierto ahora
                      </span>
                    ) : (

@@ -1,7 +1,7 @@
 // ─── Badge: chip de estado o categoría ───────────────────────────
 const VARIANT_CLASSES = {
   category:  'bg-wood-100 text-wood-800',
-  success:   'bg-green-100 text-green-700',
+  success:   'bg-wood-100 text-wood-400',
   danger:    'bg-red-100 text-red-600',
   neutral:   'bg-stone-100 text-stone-600',
   accent:    'bg-orange-100 text-orange-700',

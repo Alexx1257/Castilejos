@@ -63,7 +63,7 @@ export default function Contact() {
               {/* Bloque: Dirección y Teléfono */}
               <div className="space-y-8">
                 <div className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 bg-white shadow-md flex items-center justify-center shrink-0 text-nature-600 border border-stone-100 group-hover:bg-nature-600 group-hover:text-white transition-all duration-300">
+                  <div className="w-10 h-10 bg-white shadow-md flex items-center justify-center shrink-0 text-wood-400 border border-stone-100 group-hover:bg-wood-400 group-hover:text-white transition-all duration-300">
                     <FiMapPin size={18} />
                   </div>
                   <div className="space-y-1">
@@ -76,7 +76,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 bg-white shadow-md flex items-center justify-center shrink-0 text-nature-600 border border-stone-100 group-hover:bg-nature-600 group-hover:text-white transition-all duration-300">
+                  <div className="w-10 h-10 bg-white shadow-md flex items-center justify-center shrink-0 text-wood-400 border border-stone-100 group-hover:bg-wood-400 group-hover:text-white transition-all duration-300">
                     <FiPhone size={18} />
                   </div>
                   <div className="space-y-1">
@@ -95,12 +95,12 @@ export default function Contact() {
               <div className="p-6 bg-wood-950 text-white rounded-lg shadow-xl relative overflow-hidden">
                 <div className="flex items-center justify-between mb-4 pb-4 border-b border-white/10">
                   <div className="flex items-center gap-2">
-                    <FiClock className="text-nature-500" size={16} />
+                    <FiClock className="text-wood-400" size={16} />
                     <span className="text-[10px] font-black uppercase tracking-widest text-white/50">Horarios</span>
                   </div>
                   {isOpen && (
-                    <span className="flex items-center gap-1.5 text-[8px] font-black uppercase tracking-widest text-nature-500">
-                      <div className="w-1 h-1 bg-nature-500 rounded-full animate-pulse" />
+                    <span className="flex items-center gap-1.5 text-[8px] font-black uppercase tracking-widest text-wood-400">
+                      <div className="w-1 h-1 bg-wood-400 rounded-full animate-pulse" />
                       Abierto
                     </span>
                   )}
@@ -125,7 +125,7 @@ export default function Contact() {
                 href={BUSINESS_INFO.mapsPlaceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center gap-3 px-10 py-5 bg-nature-600 hover:bg-nature-500 text-white shadow-lg hover:shadow-nature-600/20 hover:-translate-y-1 transition-all rounded-sm font-bold uppercase tracking-widest text-xs"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 px-10 py-5 bg-wood-400 hover:bg-wood-500 text-white shadow-lg hover:shadow-wood-400/20 hover:-translate-y-1 transition-all rounded-sm font-bold uppercase tracking-widest text-xs"
               >
                 <FiNavigation size={18} />
                 Cómo llegar

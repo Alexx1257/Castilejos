@@ -62,7 +62,7 @@ export default function QuickView({ product, isOpen, onClose }) {
             <ul className="space-y-3">
                 {['Certificación de Origen', 'Alta Resistencia', 'Entrega Inmediata'].map(spec => (
                     <li key={spec} className="flex items-center gap-3 text-xs uppercase tracking-widest font-bold text-wood-950/40">
-                        <FiCheck className="text-nature-600" size={14} />
+                        <FiCheck className="text-wood-400" size={14} />
                         {spec}
                     </li>
                 ))}

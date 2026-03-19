@@ -7,8 +7,7 @@ const NAV_LINKS = [
   { label: 'Inicio',    href: '#hero' },
   { label: 'Sobre nosotros',  href: '#about' },
   { label: 'Productos',   href: '#catalogo' },
-  { label: 'Ubicación', href: '#ubicacion' },
-  { label: 'Contacto',  href: '#contacto' },
+  { label: 'Encuéntranos', href: '#contacto' },
 ]
 
 export default function Navbar({ onOpenCart }) {
@@ -75,21 +74,13 @@ export default function Navbar({ onOpenCart }) {
           >
             <FiShoppingCart size={22} className="group-hover:scale-110 transition-transform" />
             {itemCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-nature-600 text-white text-[10px] font-bold
-                rounded-full w-5 h-5 flex items-center justify-center shadow-[0_0_15px_rgba(77,138,77,0.5)]">
+              <span className="absolute -top-1 -right-1 bg-wood-400 text-white text-[10px] font-bold
+                rounded-full w-5 h-5 flex items-center justify-center shadow-[0_0_15px_rgba(166,124,82,0.4)]">
                 {itemCount}
               </span>
             )}
           </button>
 
-          {/* User CTA (Desktop) */}
-          <a
-            href="#contacto"
-            className="hidden sm:inline-flex px-8 py-3 text-[10px] font-bold uppercase tracking-[0.2em] 
-              bg-white text-wood-950 rounded-sm hover:bg-wood-100 transition-all duration-300 shadow-lg"
-          >
-            Cotizar Proyecto
-          </a>
 
           {/* Hamburguesa Móvil */}
           <button

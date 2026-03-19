@@ -21,7 +21,10 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-3">
               <img src={logoImage} alt="Logo Castillejos" className="w-12 h-12 grayscale opacity-50" />
-              <span className="font-display font-medium text-xl tracking-tight uppercase text-white/40">CASTILLEJOS</span>
+              <div className="flex flex-col">
+                <span className="font-display font-medium text-xl tracking-tight uppercase text-white/40 leading-tight">CASTILLEJOS</span>
+                <span className="text-[10px] uppercase tracking-[0.25em] text-white/20 font-bold mt-0.5">Maderería y Ferretería</span>
+              </div>
             </div>
             <p className="text-[10px] uppercase tracking-[0.3em] text-white/20 font-bold text-center md:text-left">
               Maderas de calidad para proyectos duraderos
@@ -32,8 +35,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-end gap-6 text-center md:text-right">
             <nav className="flex gap-8">
               <a href="#catalogo" className="text-xs font-bold uppercase tracking-widest text-white/30 hover:text-wood-400 transition-colors">Catálogo</a>
-              <a href="#contacto" className="text-xs font-bold uppercase tracking-widest text-white/30 hover:text-wood-400 transition-colors">Contacto</a>
-              <a href="#proyectos" className="text-xs font-bold uppercase tracking-widest text-white/30 hover:text-wood-400 transition-colors">Proyectos</a>
+              <a href="#contacto" className="text-xs font-bold uppercase tracking-widest text-white/30 hover:text-wood-400 transition-colors">Encuéntranos</a>
             </nav>
 
             <div className="flex gap-6">
