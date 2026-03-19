@@ -41,3 +41,8 @@ export function buildWhatsAppOrderUrl(cartItems, total) {
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 }
+export function buildWhatsAppOfferUrl(productName, specialPrice) {
+  const phone = getSafePhone()
+  const message = `¡Hola! Vi la oferta de la *${productName}* en su página y me gustaría apartarla al precio especial de *$${specialPrice}*. ¿Me podrían dar más detalles?`
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+}

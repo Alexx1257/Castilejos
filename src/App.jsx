@@ -8,11 +8,10 @@ import Footer   from './components/layout/Footer'
 // Secciones
 import Hero       from './sections/Hero'
 import About      from './sections/About'
-import PromoBanner from './sections/PromoBanner'
+import OfertasFlash from './sections/OfertasFlash'
 import Catalog    from './sections/Catalog'
 import Testimonials from './sections/Testimonials'
-import Features   from './sections/Features'
-import Location   from './sections/Location'
+
 import Contact    from './sections/Contact'
 
 // Carrito
@@ -38,13 +37,13 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <PromoBanner />
+        <OfertasFlash />
         <Catalog />
         <Testimonials />
-        <Features />
-        <Location />
+
         <Contact />
       </main>
+
 
       {/* Footer */}
       <Footer />

@@ -28,7 +28,7 @@ export default function Testimonials() {
         <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <span className="premium-label mx-auto">Confianza y Resultados</span>
           <h2 className="text-4xl md:text-5xl font-display font-medium text-wood-950">
-            Lo que dicen <span className="text-wood-400 italic">nuestros aliados.</span>
+            Lo que dicen <span className="text-wood-400 italic">nuestros clientes.</span>
           </h2>
         </div>
 

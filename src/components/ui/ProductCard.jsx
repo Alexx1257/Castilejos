@@ -59,6 +59,15 @@ export default function ProductCard({ product }) {
              </div>
           </div>
 
+          {/* Badge de descuento */}
+          {product.isOffer && (
+            <div className="absolute top-4 left-4 z-10">
+              <span className="bg-orange-600 text-white text-[10px] font-black px-3 py-1.5 uppercase tracking-widest shadow-xl flex items-center gap-2 skew-x-[-12deg]">
+                <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                {product.discountLabel || 'Oferta'}
+              </span>
+            </div>
+          )}
 
           {/* Badge de stock sutil */}
           {isOutOfStock && (
@@ -85,26 +94,45 @@ export default function ProductCard({ product }) {
             <p className="text-[9px] uppercase tracking-widest text-sand-400 font-bold">{product.measurements || 'Medida Estándar'}</p>
           </div>
           
-          <div className="flex items-baseline justify-between pt-2">
-            <div className="flex items-baseline gap-1">
-                <span className="text-xs text-sand-400 font-medium">$</span>
-                <p className="text-2xl font-display font-bold text-wood-800">
-                  {product.price}
-                </p>
+          <div className="space-y-4">
+            <div className="flex items-end justify-between">
+              <div className="flex flex-col">
+                {product.originalPrice && (
+                  <span className="text-xs text-sand-400 line-through mb-[-4px]">
+                    ${product.originalPrice}
+                  </span>
+                )}
+                <div className="flex items-baseline gap-1">
+                  <span className={`text-xs font-medium ${product.isOffer ? 'text-orange-600' : 'text-sand-400'}`}>$</span>
+                  <p className={`text-2xl font-display font-bold ${product.isOffer ? 'text-orange-600' : 'text-wood-800'}`}>
+                    {product.price}
+                  </p>
+                </div>
+              </div>
+              
+              <button
+                onClick={handleAddToCart}
+                disabled={isOutOfStock}
+                className={`w-12 h-12 flex items-center justify-center transition-all shadow-[0_10px_20px_rgba(0,0,0,0.05)]
+                  ${isOutOfStock 
+                    ? 'bg-sand-100 text-sand-300 cursor-not-allowed' 
+                    : 'bg-wood-900 text-white hover:bg-wood-700 active:scale-90'
+                  }`}
+                aria-label="Añadir al pedido"
+              >
+                <FiPlus size={20} />
+              </button>
             </div>
-            
-            <button
-              onClick={handleAddToCart}
-              disabled={isOutOfStock}
-              className={`w-12 h-12 flex items-center justify-center transition-all shadow-[0_10px_20px_rgba(0,0,0,0.05)]
-                ${isOutOfStock 
-                  ? 'bg-sand-100 text-sand-300 cursor-not-allowed' 
-                  : 'bg-wood-900 text-white hover:bg-wood-700 active:scale-90'
-                }`}
-              aria-label="Añadir al pedido"
-            >
-              <FiPlus size={20} />
-            </button>
+
+            {/* Etiqueta de Ahorro */}
+            {product.isOffer && product.originalPrice && (
+              <div className="bg-orange-50 border-l-2 border-orange-500 px-3 py-2 flex items-center justify-between">
+                <span className="text-[9px] font-black uppercase tracking-wider text-orange-950">Ahorras ${product.originalPrice - product.price} MXN</span>
+                <div className="flex gap-1">
+                   {[1,2,3].map(i => <div key={i} className="w-1 h-1 bg-orange-400 rounded-full animate-bounce" style={{ animationDelay: `${i * 0.1}s` }} />)}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="pt-4 flex items-center justify-between border-t border-sand-50">

@@ -5,8 +5,8 @@ import { useCartContext } from '../../context/CartContext'
 
 const NAV_LINKS = [
   { label: 'Inicio',    href: '#hero' },
-  { label: 'Tradición',  href: '#about' },
-  { label: 'Maderas',   href: '#catalogo' },
+  { label: 'Sobre nosotros',  href: '#about' },
+  { label: 'Productos',   href: '#catalogo' },
   { label: 'Ubicación', href: '#ubicacion' },
   { label: 'Contacto',  href: '#contacto' },
 ]

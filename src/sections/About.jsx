@@ -10,7 +10,7 @@ const STATS = [
 
 export default function About() {
   return (
-    <section id="about" className="py-32 bg-white relative overflow-hidden" aria-label="Sobre el negocio">
+    <section id="about" className="py-32 bg-sand-50 relative overflow-hidden" aria-label="Sobre el negocio">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-sand-50/30 -skew-x-6 translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -19,19 +19,22 @@ export default function About() {
           {/* Text Column */}
           <div className="order-2 lg:order-1 space-y-10">
             <div className="space-y-4">
-              <span className="premium-label">Legado y Maestría</span>
+              <span className="premium-label">Sobre nosotros</span>
               <h2 className="text-5xl md:text-6xl font-display font-medium text-wood-950 leading-tight">
-                Tradición en cada <br />
+                Calidad en cada <br />
                 <span className="text-wood-400 italic">Veta de Madera.</span>
               </h2>
             </div>
 
             <div className="space-y-8 text-lg text-sand-600 font-light leading-relaxed">
               <p>
-                En <span className="font-semibold text-wood-900 italic">Maderería Castillejos</span>, entendemos que la madera es más que un material; es el alma de sus espacios. Seleccionamos cuidadosamente cada pieza para asegurar que su visión cobre vida con la autenticidad que solo la naturaleza puede brindar.
+                En <span className="font-semibold text-wood-900 italic">Maderería y Ferreteria Castillejos</span>, 
+                nos especializamos en ofrecer madera de calidad para todo tipo de proyectos. 
+                Seleccionamos cada pieza pensando en durabilidad y buen rendimiento.
               </p>
               <p>
-                Con décadas de experiencia en el sector, nos enorgullece ser el punto de encuentro de carpinteros, diseñadores y constructores que no aceptan menos que la perfección técnica y estética en sus suministros.
+                Además, contamos con una selección de productos de ferretería para complementar tu trabajo,
+                facilitando que encuentres todo lo que necesitas en un solo lugar.
               </p>
             </div>
 
