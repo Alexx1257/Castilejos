@@ -42,9 +42,9 @@ export default function CartDrawer({ isOpen, onClose }) {
         {/* Header Elegante */}
         <div className="flex items-center justify-between p-8 border-b border-sand-100">
           <div className="flex flex-col">
-            <h2 className="font-display font-black text-2xl text-wood-950 tracking-tight">PEDIDO</h2>
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-wood-500">
-              {items.length} artículos seleccionados
+            <h2 className="font-display font-black text-2xl text-wood-950 tracking-tight uppercase">Tu Pedido</h2>
+            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-orange-600 mt-1">
+              Aparta en línea, paga y recoge en tienda
             </span>
           </div>
           <button
@@ -83,9 +83,9 @@ export default function CartDrawer({ isOpen, onClose }) {
           <div className="p-8 bg-sand-50 border-t border-sand-100 space-y-8">
             <div className="flex justify-between items-end">
               <div>
-                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-sand-400">Total Sugerido</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-sand-400">Total Aproximado</span>
                 <p className="text-3xl font-display font-black text-wood-900 leading-none mt-1">
-                  ${cartTotal}
+                  ${cartTotal.toFixed(2)}
                 </p>
               </div>
               <button 
@@ -111,17 +111,19 @@ export default function CartDrawer({ isOpen, onClose }) {
                 {isProcessing ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    <span>Procesando Pedido...</span>
+                    <span>Procesando Apartado...</span>
                   </>
                 ) : (
                   <>
                     <FaWhatsapp size={22} className="group-hover/btn:rotate-12 transition-transform" />
-                    <span>Solicitar Cotización Directa</span>
+                    <span>Apartar productos por WhatsApp</span>
                   </>
                 )}
               </button>
-              <p className="text-[9px] text-center text-sand-400 uppercase tracking-widest leading-relaxed">
-                * El costo final puede variar según dimensiones y flete.<br/>Un experto le atenderá de inmediato.
+              <p className="text-[10px] text-center text-sand-500 font-medium leading-relaxed">
+                Este es un proceso de <span className="text-wood-900 font-bold italic">apartado</span>. <br/>
+                Confirmaremos existencias por WhatsApp y <br/>
+                podrás pasar a <span className="text-wood-900 font-bold italic">recoger y pagar</span> en tienda física.
               </p>
             </div>
           </div>

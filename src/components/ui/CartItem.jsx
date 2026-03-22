@@ -54,9 +54,23 @@ export default function CartItem({ item }) {
             </button>
           </div>
           
-          <p className="font-display font-black text-wood-800 text-sm">
-            ${(item.price * item.quantity).toFixed(2)}
-          </p>
+          <div className="text-right">
+            {item.originalPrice && (
+              <p className="text-[10px] text-sand-400 line-through mb-[-2px]">
+                ${(item.originalPrice * item.quantity).toFixed(2)}
+              </p>
+            )}
+            <div className="flex items-center justify-end gap-2">
+              {item.isOffer && (
+                <span className="text-[8px] font-black bg-orange-100 text-orange-600 px-1.5 py-0.5 uppercase tracking-tighter">
+                  {item.discountLabel || 'Oferta'}
+                </span>
+              )}
+              <p className={`font-display font-black text-sm ${item.isOffer ? 'text-orange-600' : 'text-wood-800'}`}>
+                ${(item.price * item.quantity).toFixed(2)}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </li>

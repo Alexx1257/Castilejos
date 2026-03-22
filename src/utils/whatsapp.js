@@ -26,17 +26,20 @@ export function buildWhatsAppOrderUrl(cartItems, total) {
   if (!cartItems.length) return `https://wa.me/${phone}`
 
   const itemLines = cartItems
-    .map((item) => `  • ${item.quantity}x ${item.name} — $${(item.price * item.quantity).toFixed(2)}`)
+    .map((item) => {
+      const discountInfo = item.isOffer ? ` (Descuento aplicado: ${item.discountLabel || 'Oferta'})` : ''
+      return `  • ${item.quantity}x ${item.name}${discountInfo} — $${(item.price * item.quantity).toFixed(2)}`
+    })
     .join('\n')
 
   const message = [
-    `¡Hola! Quiero hacer el siguiente pedido de ${BUSINESS_INFO.name}:`,
+    `¡Hola! Me gustaría apartar los siguientes productos de *${BUSINESS_INFO.name}* para recoger en tienda:`,
     '',
     itemLines,
     '',
-    `*Total estimado: $${total.toFixed(2)} MXN*`,
+    `*Total aproximado: $${total.toFixed(2)} MXN*`,
     '',
-    'Por favor, confirmen disponibilidad y tiempo de entrega. ¡Gracias! 🙏',
+    '_Solicito confirmar disponibilidad para pasar a pagar y recoger en sucursal._ ¡Gracias! 🙏',
   ].join('\n')
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`

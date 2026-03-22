@@ -59,7 +59,7 @@ export default function Catalog() {
             <span className="premium-label">Nuestros Productos</span>
             <h2 className="text-5xl md:text-6xl font-display font-medium text-wood-950 leading-tight">
               Materiales para tu proyecto <br />
-              <span className="text-wood-400 italic">Curaduría de Calidad</span>
+              <span className="text-wood-400 italic">Maderas & Suministros</span>
             </h2>
           </div>
 
